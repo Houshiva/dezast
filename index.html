@@ -107,10 +107,19 @@
         radial-gradient(ellipse 70% 60% at 50% 42%, rgba(255, 190, 150, .07), transparent 70%),
         radial-gradient(ellipse 120% 90% at 50% 50%, transparent 45%, var(--red-deep) 120%);
     }
+    .stage::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: var(--red-deep);
+      opacity: 0;
+      pointer-events: none;
+    }
 
     .center {
       position: relative;
-      z-index: 1;
+      z-index: 3;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -250,6 +259,29 @@
       footer { margin-top: 8px; }
     }
 
+    /* ---- the film: fly through the logo, then rebuild (classes set by the script) ---- */
+    .stage.reset, .stage.reset *, .stage.reset::after { animation: none !important; }
+    .stage.replay::after { animation: lift .9s ease forwards; }
+    .stage.fly::after { animation: dim 1.1s ease forwards; }
+    .stage.fly .logo {
+      -webkit-mask-image: none;
+              mask-image: none;
+      transform-origin: 50% 52%;
+      animation: through 1.3s cubic-bezier(.6, 0, .9, .45) forwards;
+    }
+    .stage.fly .slogan,
+    .stage.fly .bridge,
+    .stage.fly footer { animation: away .7s ease forwards; }
+    .stage.ready .logo { cursor: pointer; }
+    @keyframes through {
+      0%   { transform: scale(1); opacity: 1; }
+      65%  { opacity: 1; }
+      100% { transform: scale(11); opacity: 0; }
+    }
+    @keyframes away { from { opacity: 1; } to { opacity: 0; transform: scale(.94); } }
+    @keyframes dim  { to { opacity: .85; } }
+    @keyframes lift { from { opacity: .85; } to { opacity: 0; } }
+
     @media (prefers-reduced-motion: reduce) {
       .logo, .slogan span, footer { animation: none; opacity: 1; transform: none; }
       .logo { -webkit-mask-image: none; mask-image: none; }
@@ -328,6 +360,32 @@
         p.style.animationDuration = SPARK + "s";
         p.style.animationDelay = delay + "s";
       });
+
+      // The film: once the spark has crossed the visible arches the first time, fly through the
+      // logo, pause on dark red, rebuild everything and stay. Tapping the logo plays it again.
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      var FLY = 1.3, PAUSE = 0.5;
+      var stage = document.querySelector(".stage"), logo = document.querySelector(".logo");
+      while (at < total && core.getPointAtLength(at).x > left) at += 10;
+      var firstPass = delay + (at / total) * SPARK + 0.2;
+      var busy = true;
+
+      function fly() {
+        busy = true;
+        stage.classList.remove("ready");
+        stage.classList.add("fly");
+        setTimeout(rebuild, (FLY + PAUSE) * 1000);
+      }
+      function rebuild() {
+        stage.classList.add("reset");           // drop every animation...
+        stage.classList.remove("fly");
+        void stage.offsetWidth;                 // ...let the browser notice...
+        stage.classList.remove("reset");        // ...and start them all again from zero
+        stage.classList.add("replay");
+        setTimeout(function () { busy = false; stage.classList.add("ready"); }, firstPass * 1000);
+      }
+      setTimeout(fly, firstPass * 1000);
+      logo.addEventListener("click", function () { if (!busy) fly(); });
     })();
   </script>
 </body>
