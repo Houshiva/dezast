@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>است | بوی خوش آرامش در راه است</title>
+  <meta name="description" content="است؛ به‌زودی در دزفول. بوی خوش آرامش در راه است — منتظر باشید.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#770e12">
+  <link rel="canonical" href="https://dezast.ir/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="است">
+  <meta property="og:url" content="https://dezast.ir/">
+  <meta property="og:title" content="است | بوی خوش آرامش در راه است">
+  <meta property="og:description" content="به‌زودی در دزفول — dezast.ir">
+  <meta property="og:image" content="https://dezast.ir/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="لوگوی است و شعار «بوی خوش آرامش در راه است» با طرح پل قدیم دزفول">
+  <meta property="og:locale" content="fa_IR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="است | بوی خوش آرامش در راه است">
+  <meta name="twitter:description" content="به‌زودی در دزفول — dezast.ir">
+  <meta name="twitter:image" content="https://dezast.ir/assets/og.jpg">
+
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/Vazirmatn-Light.woff2" as="font" type="font/woff2" crossorigin>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://dezast.ir/#website",
+        "url": "https://dezast.ir/",
+        "name": "است",
+        "alternateName": "dezast",
+        "inLanguage": "fa-IR",
+        "description": "بوی خوش آرامش در راه است — به‌زودی در دزفول."
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://dezast.ir/#org",
+        "name": "است",
+        "alternateName": "dezast",
+        "url": "https://dezast.ir/",
+        "logo": "https://dezast.ir/assets/icon-512.png",
+        "areaServed": { "@type": "City", "name": "دزفول" }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    @font-face { font-family: "Vazirmatn"; src: url("assets/fonts/Vazirmatn-Light.woff2") format("woff2"); font-weight: 300; font-display: swap; }
+    @font-face { font-family: "Vazirmatn"; src: url("assets/fonts/Vazirmatn-Medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+    @font-face { font-family: "Vazirmatn"; src: url("assets/fonts/Vazirmatn-Bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+
+    :root {
+      --red: #770e12;
+      --red-deep: #4a070a;
+      --gold: #eed991;
+      --gold-soft: rgba(238, 217, 145, .62);
+      --gold-text: rgba(238, 217, 145, .8);
+      --ease: cubic-bezier(.22, .61, .36, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      background: var(--red);
+      color: var(--gold);
+      font-family: "Vazirmatn", Tahoma, sans-serif;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      overflow: hidden;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    /* depth: soft vignette + static grain tile (no blend modes, cheap to composite) */
+    /* exactly one screen tall, never more: if space runs short the logo shrinks, nothing scrolls */
+    .stage {
+      position: relative;
+      height: 100vh;
+      height: 100svh;
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: minmax(0, 1fr) auto auto;
+      justify-items: center;
+      padding: 32px 0 max(24px, env(safe-area-inset-bottom));
+      background:
+        url("assets/grain.png"),
+        radial-gradient(ellipse 70% 60% at 50% 42%, rgba(255, 190, 150, .07), transparent 70%),
+        radial-gradient(ellipse 120% 90% at 50% 50%, transparent 45%, var(--red-deep) 120%);
+    }
+
+    .center {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      min-height: 0;
+      height: 100%;
+      text-align: center;
+      padding: 0 16px clamp(20px, 4vh, 40px);
+    }
+
+    /* logo: revealed the way «است» is written, top-right to bottom-left, then breathes */
+    .center h1 { display: flex; justify-content: center; min-height: 0; flex: 0 1 auto; }
+    .logo {
+      display: block;
+      width: min(400px, 58vw, 35vh);
+      height: auto;
+      min-height: 0;
+      object-fit: contain;
+      -webkit-mask-image: linear-gradient(225deg, #000 40%, transparent 60%);
+              mask-image: linear-gradient(225deg, #000 40%, transparent 60%);
+      -webkit-mask-size: 300% 300%;
+              mask-size: 300% 300%;
+      -webkit-mask-position: 0 100%;
+              mask-position: 0 100%;
+      filter: drop-shadow(0 0 28px rgba(238, 217, 145, .2));
+      animation:
+        draw 1.2s var(--ease) .1s forwards,
+        breathe 7s ease-in-out 1.4s infinite;
+    }
+    @keyframes draw {
+      to { -webkit-mask-position: 100% 0; mask-position: 100% 0; }
+    }
+    @keyframes breathe {
+      50% { transform: translateY(-6px); }
+    }
+
+    .slogan {
+      margin-top: clamp(24px, 5vh, 48px);
+      font-size: clamp(1.55rem, 5.2vw, 2.6rem);
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--gold-soft);
+    }
+    .slogan span {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: rise .8s var(--ease) forwards;
+    }
+    .slogan .w1 { animation-delay: .7s; }
+    .slogan .w2 { animation-delay: .82s; }
+    .slogan .w3 { animation-delay: .94s; }
+    .slogan .w4 { animation-delay: 1.06s; }
+    .slogan .w5 { animation-delay: 1.18s; }
+    .slogan .ast {
+      color: var(--gold);
+      font-weight: 700;
+      animation-delay: 1.45s;
+    }
+    @keyframes rise { to { opacity: 1; transform: none; } }
+    @keyframes fade { to { opacity: 1; } }
+
+    /* old Dezful bridge: its own row, so it never meets the slogan;
+       height never drops below width/10 (the drawing's ratio), so slice only crops the sides */
+    .bridge {
+      display: block;
+      width: 100%;
+      height: max(clamp(110px, min(34vh, 40vw), 340px), 10vw);
+      pointer-events: none;
+      -webkit-mask-image: linear-gradient(to right, transparent, #000 18%, #000 82%, transparent);
+              mask-image: linear-gradient(to right, transparent, #000 18%, #000 82%, transparent);
+    }
+    .bridge path {
+      fill: none;
+      stroke: var(--gold);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    /* drawn right to left; the script staggers each piece by its position on screen.
+       Without the script everything draws at once from 1.8s. */
+    .b-lines { opacity: 0; animation: reveal .01s linear 1.8s forwards; }
+    .b-lines path {
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: line 1.6s var(--ease) 1.8s forwards;
+    }
+    .b-water { opacity: 0; animation: water 1.5s ease 3.2s forwards; }
+    /* a spark that walks the bridge: along the base, up and over each arch, on to the next */
+    .bridge .b-trace path {
+      stroke-dasharray: .012 2;
+      stroke-dashoffset: .012;
+      animation: trace 7.5s linear 3.9s infinite;
+    }
+    .bridge .t-core { stroke-width: 2.2; }
+    .bridge .t-halo { stroke-width: 8; opacity: .22; }
+    @keyframes trace { to { stroke-dashoffset: -1; } }
+    @keyframes reveal { to { opacity: .4; } }
+    @keyframes line { to { stroke-dashoffset: 0; } }
+    @keyframes water { to { opacity: .22; } }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      margin-top: 14px;
+      padding: 0 16px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      font-size: .82rem;
+      font-weight: 500;
+      color: var(--gold-text);
+      opacity: 0;
+      animation: fade 1s ease 2.2s forwards;
+    }
+    footer .dot { opacity: .5; }
+    footer .domain {
+      direction: ltr;
+      letter-spacing: .14em;
+    }
+
+    /* portrait (phones): centre logo + slogan + bridge as one group instead of
+       pinning it to the bottom, so the top of the screen isn't left empty */
+    @media (orientation: portrait) {
+      .stage { grid-template-rows: minmax(0, 1fr) auto auto minmax(0, 1.25fr); }
+      .center { grid-row: 2; height: auto; }
+      .bridge { grid-row: 3; }
+      footer { grid-row: 4; align-self: end; }
+      .logo { width: min(320px, 64vw, 30vh); }
+    }
+
+    /* very short landscape screens (phone on its side): tighter bridge and slogan so the logo keeps room */
+    @media (orientation: landscape) and (max-height: 500px) {
+      .stage { padding-top: 16px; }
+      .bridge { height: max(24vh, 10vw); }
+      .slogan { margin-top: 10px; font-size: clamp(1.2rem, 6.5vh, 2rem); }
+      footer { margin-top: 8px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .logo, .slogan span, footer { animation: none; opacity: 1; transform: none; }
+      .logo { -webkit-mask-image: none; mask-image: none; }
+      .b-lines { animation: none; opacity: .4; }
+      .b-lines path { animation: none; stroke-dashoffset: 0; }
+      .b-water { animation: none; opacity: .22; }
+      .b-trace { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <div class="center">
+      <h1>
+        <img class="logo" src="assets/logo-ast.png" width="681" height="616" alt="است">
+        <span class="sr-only">است | dezast</span>
+      </h1>
+      <p class="slogan" aria-label="بوی خوش آرامش در راه است">
+        <span class="w1">بوی</span>
+        <span class="w2">خوش</span>
+        <span class="w3">آرامش</span>
+        <span class="w4">در</span>
+        <span class="w5">راه</span>
+        <span class="ast">است</span>
+      </p>
+    </div>
+
+    <!--bridge:start-->
+    <svg class="bridge" viewBox="0 0 3000 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <g class="b-lines"><path pathLength="1" d="M2972,18 L28,18"/><path pathLength="1" d="M2972,32 L28,32"/><path pathLength="1" d="M2972,262 L28,262"/><path pathLength="1" d="M155.0,150 L155.0,116 A26.0,26.0 0 0 0 134.0,90.5 A26.0,26.0 0 0 0 113.0,116 L113.0,150 Z"/><path pathLength="1" d="M184.0,222 L134.0,208 L84.0,222"/><path pathLength="1" d="M312.0,262 L312.0,152 A79.4,79.4 0 0 0 248.0,74.1 A79.4,79.4 0 0 0 184.0,152 L184.0,262"/><path pathLength="1" d="M385.8,150 L385.8,116 A27.1,27.1 0 0 0 364.0,89.4 A27.1,27.1 0 0 0 342.2,116 L342.2,150 Z"/><path pathLength="1" d="M416.0,222 L364.0,208 L312.0,222"/><path pathLength="1" d="M562.0,262 L562.0,152 A90.5,90.5 0 0 0 489.0,63.2 A90.5,90.5 0 0 0 416.0,152 L416.0,262"/><path pathLength="1" d="M631.6,150 L631.6,116 A25.5,25.5 0 0 0 611.0,91.0 A25.5,25.5 0 0 0 590.4,116 L590.4,150 Z"/><path pathLength="1" d="M660.0,222 L611.0,208 L562.0,222"/><path pathLength="1" d="M794.0,262 L794.0,152 A83.1,83.1 0 0 0 727.0,70.5 A83.1,83.1 0 0 0 660.0,152 L660.0,262"/><path pathLength="1" d="M870.7,150 L870.7,116 A28.1,28.1 0 0 0 848.0,88.4 A28.1,28.1 0 0 0 825.3,116 L825.3,150 Z"/><path pathLength="1" d="M902.0,222 L848.0,208 L794.0,222"/><path pathLength="1" d="M1062.0,262 L1062.0,152 A99.2,99.2 0 0 0 982.0,54.7 A99.2,99.2 0 0 0 902.0,152 L902.0,262"/><path pathLength="1" d="M1134.4,150 L1134.4,116 A26.6,26.6 0 0 0 1113.0,89.9 A26.6,26.6 0 0 0 1091.6,116 L1091.6,150 Z"/><path pathLength="1" d="M1164.0,222 L1113.0,208 L1062.0,222"/><path pathLength="1" d="M1304.0,262 L1304.0,152 A86.8,86.8 0 0 0 1234.0,66.8 A86.8,86.8 0 0 0 1164.0,152 L1164.0,262"/><path pathLength="1" d="M1382.1,150 L1382.1,116 A28.6,28.6 0 0 0 1359.0,87.9 A28.6,28.6 0 0 0 1335.9,116 L1335.9,150 Z"/><path pathLength="1" d="M1414.0,222 L1359.0,208 L1304.0,222"/><path pathLength="1" d="M1586.0,262 L1586.0,152 A106.6,106.6 0 0 0 1500.0,47.4 A106.6,106.6 0 0 0 1414.0,152 L1414.0,262"/><path pathLength="1" d="M1664.1,150 L1664.1,116 A28.6,28.6 0 0 0 1641.0,87.9 A28.6,28.6 0 0 0 1617.9,116 L1617.9,150 Z"/><path pathLength="1" d="M1696.0,222 L1641.0,208 L1586.0,222"/><path pathLength="1" d="M1836.0,262 L1836.0,152 A86.8,86.8 0 0 0 1766.0,66.8 A86.8,86.8 0 0 0 1696.0,152 L1696.0,262"/><path pathLength="1" d="M1908.4,150 L1908.4,116 A26.6,26.6 0 0 0 1887.0,89.9 A26.6,26.6 0 0 0 1865.6,116 L1865.6,150 Z"/><path pathLength="1" d="M1938.0,222 L1887.0,208 L1836.0,222"/><path pathLength="1" d="M2098.0,262 L2098.0,152 A99.2,99.2 0 0 0 2018.0,54.7 A99.2,99.2 0 0 0 1938.0,152 L1938.0,262"/><path pathLength="1" d="M2174.7,150 L2174.7,116 A28.1,28.1 0 0 0 2152.0,88.4 A28.1,28.1 0 0 0 2129.3,116 L2129.3,150 Z"/><path pathLength="1" d="M2206.0,222 L2152.0,208 L2098.0,222"/><path pathLength="1" d="M2340.0,262 L2340.0,152 A83.1,83.1 0 0 0 2273.0,70.5 A83.1,83.1 0 0 0 2206.0,152 L2206.0,262"/><path pathLength="1" d="M2409.6,150 L2409.6,116 A25.5,25.5 0 0 0 2389.0,91.0 A25.5,25.5 0 0 0 2368.4,116 L2368.4,150 Z"/><path pathLength="1" d="M2438.0,222 L2389.0,208 L2340.0,222"/><path pathLength="1" d="M2584.0,262 L2584.0,152 A90.5,90.5 0 0 0 2511.0,63.2 A90.5,90.5 0 0 0 2438.0,152 L2438.0,262"/><path pathLength="1" d="M2657.8,150 L2657.8,116 A27.1,27.1 0 0 0 2636.0,89.4 A27.1,27.1 0 0 0 2614.2,116 L2614.2,150 Z"/><path pathLength="1" d="M2688.0,222 L2636.0,208 L2584.0,222"/><path pathLength="1" d="M2816.0,262 L2816.0,152 A79.4,79.4 0 0 0 2752.0,74.1 A79.4,79.4 0 0 0 2688.0,152 L2688.0,262"/><path pathLength="1" d="M2887.0,150 L2887.0,116 A26.0,26.0 0 0 0 2866.0,90.5 A26.0,26.0 0 0 0 2845.0,116 L2845.0,150 Z"/><path pathLength="1" d="M2916.0,222 L2866.0,208 L2816.0,222"/></g>
+      <g class="b-water"><path d="M1163,278 h55"/><path d="M1833,272 h34"/><path d="M2181,272 h53"/><path d="M1693,272 h88"/><path d="M1539,278 h32"/><path d="M676,290 h56"/><path d="M643,278 h35"/><path d="M1628,290 h33"/><path d="M2193,272 h90"/><path d="M957,272 h66"/><path d="M1699,290 h33"/><path d="M952,272 h65"/><path d="M2258,278 h48"/><path d="M1358,278 h64"/><path d="M741,284 h65"/><path d="M2171,278 h36"/></g>
+      <g class="b-trace"><path class="t-halo" pathLength="1" d="M2972,262 L2816.0,262 L2816.0,152 A79.4,79.4 0 0 0 2752.0,74.1 A79.4,79.4 0 0 0 2688.0,152 L2688.0,262 L2584.0,262 L2584.0,152 A90.5,90.5 0 0 0 2511.0,63.2 A90.5,90.5 0 0 0 2438.0,152 L2438.0,262 L2340.0,262 L2340.0,152 A83.1,83.1 0 0 0 2273.0,70.5 A83.1,83.1 0 0 0 2206.0,152 L2206.0,262 L2098.0,262 L2098.0,152 A99.2,99.2 0 0 0 2018.0,54.7 A99.2,99.2 0 0 0 1938.0,152 L1938.0,262 L1836.0,262 L1836.0,152 A86.8,86.8 0 0 0 1766.0,66.8 A86.8,86.8 0 0 0 1696.0,152 L1696.0,262 L1586.0,262 L1586.0,152 A106.6,106.6 0 0 0 1500.0,47.4 A106.6,106.6 0 0 0 1414.0,152 L1414.0,262 L1304.0,262 L1304.0,152 A86.8,86.8 0 0 0 1234.0,66.8 A86.8,86.8 0 0 0 1164.0,152 L1164.0,262 L1062.0,262 L1062.0,152 A99.2,99.2 0 0 0 982.0,54.7 A99.2,99.2 0 0 0 902.0,152 L902.0,262 L794.0,262 L794.0,152 A83.1,83.1 0 0 0 727.0,70.5 A83.1,83.1 0 0 0 660.0,152 L660.0,262 L562.0,262 L562.0,152 A90.5,90.5 0 0 0 489.0,63.2 A90.5,90.5 0 0 0 416.0,152 L416.0,262 L312.0,262 L312.0,152 A79.4,79.4 0 0 0 248.0,74.1 A79.4,79.4 0 0 0 184.0,152 L184.0,262 L28,262"/><path class="t-core" pathLength="1" d="M2972,262 L2816.0,262 L2816.0,152 A79.4,79.4 0 0 0 2752.0,74.1 A79.4,79.4 0 0 0 2688.0,152 L2688.0,262 L2584.0,262 L2584.0,152 A90.5,90.5 0 0 0 2511.0,63.2 A90.5,90.5 0 0 0 2438.0,152 L2438.0,262 L2340.0,262 L2340.0,152 A83.1,83.1 0 0 0 2273.0,70.5 A83.1,83.1 0 0 0 2206.0,152 L2206.0,262 L2098.0,262 L2098.0,152 A99.2,99.2 0 0 0 2018.0,54.7 A99.2,99.2 0 0 0 1938.0,152 L1938.0,262 L1836.0,262 L1836.0,152 A86.8,86.8 0 0 0 1766.0,66.8 A86.8,86.8 0 0 0 1696.0,152 L1696.0,262 L1586.0,262 L1586.0,152 A106.6,106.6 0 0 0 1500.0,47.4 A106.6,106.6 0 0 0 1414.0,152 L1414.0,262 L1304.0,262 L1304.0,152 A86.8,86.8 0 0 0 1234.0,66.8 A86.8,86.8 0 0 0 1164.0,152 L1164.0,262 L1062.0,262 L1062.0,152 A99.2,99.2 0 0 0 982.0,54.7 A99.2,99.2 0 0 0 902.0,152 L902.0,262 L794.0,262 L794.0,152 A83.1,83.1 0 0 0 727.0,70.5 A83.1,83.1 0 0 0 660.0,152 L660.0,262 L562.0,262 L562.0,152 A90.5,90.5 0 0 0 489.0,63.2 A90.5,90.5 0 0 0 416.0,152 L416.0,262 L312.0,262 L312.0,152 A79.4,79.4 0 0 0 248.0,74.1 A79.4,79.4 0 0 0 184.0,152 L184.0,262 L28,262"/></g>
+    </svg>
+    <!--bridge:end-->
+
+    <footer>
+      <span>به‌زودی</span>
+      <span class="dot">•</span>
+      <span class="domain">DEZAST.IR</span>
+    </footer>
+  </main>
+
+  <script>
+    // Choreography that depends on screen width (the bridge drawing is wider than any screen):
+    // the bridge draws right to left across the visible part in SPAN seconds, and the spark
+    // enters at the visible right edge the moment the drawing finishes.
+    (function () {
+      var START = 1.8, SPAN = 1.6, PIECE = 0.5, SPARK = 7.5;
+      var svg = document.querySelector(".bridge");
+      if (!svg || !svg.getScreenCTM) return;
+      var ctm = svg.getScreenCTM();
+      if (!ctm) return;
+      var toUnits = function (px) { return (px - ctm.e) / ctm.a; };
+      var right = toUnits(window.innerWidth * 0.92), left = toUnits(window.innerWidth * 0.08);
+      var width = right - left, speed = width / SPAN;
+
+      svg.querySelectorAll(".b-lines path").forEach(function (p) {
+        var box = p.getBBox(), edge = box.x + box.width, s = p.style;
+        if (box.width > width) {
+          // long deck / base lines: one steady pen, in step with the pieces below
+          s.animationTimingFunction = "linear";
+          s.animationDuration = box.width / speed + "s";
+          s.animationDelay = START - (edge - right) / speed + "s";
+        } else {
+          var t = Math.min(Math.max((right - edge) / width, 0), 1);
+          s.animationDuration = PIECE + "s";
+          s.animationDelay = START + t * SPAN + "s";
+        }
+      });
+
+      var core = svg.querySelector(".t-core");
+      var total = core.getTotalLength(), at = 0;
+      while (at < total && core.getPointAtLength(at).x > right) at += 10;
+      var delay = START + SPAN + PIECE - (at / total) * SPARK;
+      svg.querySelectorAll(".b-trace path").forEach(function (p) {
+        p.style.animationDuration = SPARK + "s";
+        p.style.animationDelay = delay + "s";
+      });
+    })();
+  </script>
+</body>
+</html>

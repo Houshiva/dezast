@@ -1,0 +1,4 @@
+# dev-only: build script and reference photos, not part of the site
+_dev/
+pol*.jpg
+ECUC9864.jpg
